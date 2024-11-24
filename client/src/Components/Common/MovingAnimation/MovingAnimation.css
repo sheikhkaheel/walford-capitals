@@ -1,0 +1,32 @@
+/* MovingAnimation.css */
+.container {
+    position: relative;
+    overflow: hidden; 
+}
+
+canvas {
+    display: block; 
+}
+
+.animation {
+    animation-name: slideLeft;
+    animation-duration: 3s;
+    transition: all 3s ease;
+}
+
+@keyframes slideLeft {
+    from {
+        transform: translateX(600px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .animation {
+        animation: none;
+    }
+}

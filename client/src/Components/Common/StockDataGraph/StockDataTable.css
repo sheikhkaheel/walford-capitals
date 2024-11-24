@@ -1,0 +1,23 @@
+/* Scrollable table container */
+.overflow-x-auto {
+    max-height: 400px; /* Set a max height for scrolling */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Scrollbar styles */
+.overflow-x-auto::-webkit-scrollbar {
+    width: 3px; /* Set the width of the scrollbar */
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1); /* Track background */
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+    background: rgba(75, 192, 192, 0.5); /* Scrollbar color */
+    border-radius: 3px; /* Rounded edges */
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb:hover {
+    background: rgba(75, 192, 192, 0.8); /* Color when hovered */
+}

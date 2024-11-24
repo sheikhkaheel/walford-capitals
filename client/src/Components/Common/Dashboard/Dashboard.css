@@ -1,0 +1,39 @@
+.card{
+    background-color: #18181B ;
+}
+/* Dashboard.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif; /* Use Roboto for the body text */
+}
+
+h2 {
+    font-family: 'Roboto', sans-serif; /* Apply Roboto to h2 */
+}
+
+.text-lg {
+    font-weight: 700; /* Bold for larger text */
+}
+
+.text-sm {
+    font-weight: 400; /* Regular weight for smaller text */
+}
+
+
+
+/* Dashboard */
+
+.dashboard{
+    background-image: url('../../../../public/bold.jpg');
+    object-fit: cover;
+    background-size: 100% 100%;
+}
+
+@media (max-width:700px) {
+    .dashboard{
+        background-size: cover !important;
+        background-repeat: no-repeat;
+        background-position: 30% ;
+    }
+}

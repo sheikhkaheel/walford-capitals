@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+    --font-ephesis: "Ephesis", cursive;
+    --font-major-mono: "Major Mono Display", monospace;
+    --font-ojuju: "Ojuju", sans-serif;
+    --font-weight-ojuju: <weight>;
+    --font-orbitron: "Orbitron", sans-serif;
+}
+
+/* .ephesis {
+    font-family: var(--font-ephesis);
+    font-style: normal;
+}
+
+
+.ojuju-unique {
+    font-family: var(--font-ojuju);
+    font-optical-sizing: auto;
+    font-weight: var(--font-weight-ojuju);
+    font-style: normal;
+}
+
+
+.major-mono-display {
+    font-family: var(--font-major-mono);
+    font-weight: 400;
+    font-style: normal;
+}
+
+.orbitron-unique {
+    font-family: var(--font-orbitron);
+    font-optical-sizing: auto;
+    font-style: normal;
+} */
+
+
+/* 1st Font */
+
+.work-sans-bold {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+  }
+
+.work-sans-semibold {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 650;
+    font-style: normal;
+  }
+
+.work-sans-regular {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+  }
+
+
+.work-sans-normal {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+
+.work-sans-light {
+    font-family: "Work Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+  }

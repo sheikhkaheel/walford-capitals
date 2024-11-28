@@ -1,9 +1,26 @@
 main {
     cursor: none;
     overflow-x: hidden;
-}  
+}
 
-.items{
+.removeSLider::-webkit-scrollbar {
+    display: none;
+}
+
+.text{
+    color: #a6a6a6;
+}
+
+.darkText{
+    color: #333333;
+}
+
+.removeSLider{
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+}
+
+.items {
     border-color: #34547E;
 }
 
@@ -14,10 +31,10 @@ main {
 } */
 
 @media (max-width:700px) {
-    .bg{
+    .bg {
         background-size: cover !important;
         background-repeat: no-repeat;
-        background-position: 50% ;
+        background-position: 50%;
     }
 }
 
@@ -111,8 +128,8 @@ main {
 }
 
 .bgText {
-    background: rgb(63,94,251);
-background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }

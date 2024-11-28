@@ -44,7 +44,7 @@ app.get('/auth/google/callback',
     passport.authenticate('google', { failureRedirect: 'http://localhost:5173/login' }), // Correctly authenticate and redirect on failure
     (req, res) => {
       // After successful authentication, redirect to React app (dashboard or home)
-      res.redirect('http://localhost:5173/');
+      res.redirect('http://localhost:5173/main');
     }
 );
   

@@ -4,6 +4,7 @@ import ThreeDComponent from '../../Common/ThreeDComponent/ThreeDComponent';
 import Nav from "../Nav/Nav";
 import 'animate.css';
 import { Carousel } from 'flowbite-react';
+import Footer from "../Footer/Footer";
 
 export default function Main() {
     const cursorRef = useRef(null);
@@ -12,11 +13,28 @@ export default function Main() {
     const [animate, setAnimate] = useState(false);
     const [currentSlide, setCurrentSlide] = useState(0);
 
+    const handlePrev = () => {
+        setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+    };
+
+    const handleNext = () => {
+        setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+    };
+
     const slides = [
         { id: 1, owner: 'Garret S. - USA', description: "Danelfin is an extraordinary tool for checking out new investment ideas or to browse for new prospects. I have found more than a few big winners by browsing the top-ranked AI Scores, stocks I didn't find specifically mentioned on any other service. I routinely check the scores of my portfolio to know when to consider exiting an existing position or opening a new one." },
         { id: 2, owner: 'Guy R. - UK', description: "This an exceptionally powerful tool that allows one to understand what really drives a stock, generating actionable investment ideas often in surprising and counterintuitive ways, all presented clearly and coherently. The stellar performance of Danelfin's recommendations speaks for itself." },
         { id: 3, owner: 'Mario G. - Italy', description: "Danelfin AI can scout a comprehensive set of stocks and provides crucial information to support the decision-making process, which corroborate whatever short or long strategy you have in mind. I’ve checked Danelfin’s recommendations against my portfolio to know the results attest to its accuracy and outstanding performance. Of all the platforms I have evaluated, Danelfin is by far the most accurate and intuitive one." },
     ];
+
+    // Automatic sliding
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+        }, 3000); // Change slide every 3 seconds
+
+        return () => clearInterval(interval); // Cleanup on unmount
+    }, []);
 
     useEffect(() => {
         const handleMouseMove = (event) => {
@@ -39,34 +57,36 @@ export default function Main() {
     }, []);
 
     return (
-        <div style={{ backgroundColor: '#233253' }}>
+        <div style={{ backgroundColor: '#333333' }}>
             {/* Landing Page */}
             <div className="bg min-h-screen rounded-b-[3rem] overflow-hidden">
                 <Nav />
                 <main className="flex flex-col overflow-hidden lg:justify-around md:flex-row lg:flex-row">
-                    <div className={`z-20 animate__animated animate__fadeInLeft md:h-full lg:h-screen text-white h-1/2 pt-8 px-4 md:w-2/3 lg:pt-16 lg:w-[80%] border}`}>
-                        <h2 className="work-sans-regular lg:text-[3.5rem] lg:pt-12 leading-[4.1rem] text-4xl h-60 font-bold">
-                            Where Vision Meets Precision: Redefining Wealth with Technology
-                        </h2>
-                        <div
-                            onMouseEnter={() => setIsHovering(true)}
-                            onMouseLeave={() => setIsHovering(false)}
-                            className="lg:leading-[2rem] lg:text-[1.2rem] lg:w-3/4 text-sm mt-4 text-zinc-400 lg:font-extralight"
-                        >
-                            Outperform the NIFTY 50 at scale, and build more reliable investment strategies.
-                        </div>
-                        <div className="mt-8 flex gap-4">
-                            <button
-                                className="rounded-full py-3 transition hover:bg-lime-700 hover:text-white px-6 text-sm text-gray-800 bg-white"
+                    <div className={`lg:relative z-20 animate__animated animate__fadeInLeft md:h-full lg:h-screen text-white h-1/2 pt-8 px-4 md:w-2/3 lg:pt-16 lg:w-[80%]}`}>
+                        <div className="lg:absolute lg:bottom-[18%]">
+                            <h2 className="work-sans-regular lg:text-[3.5rem] lg:pt-12 leading-[4.1rem] text-4xl h-60 font-bold">
+                                Where Vision Meets Precision: Redefining Wealth with Technology
+                            </h2>
+                            <div
+                                onMouseEnter={() => setIsHovering(true)}
+                                onMouseLeave={() => setIsHovering(false)}
+                                className="lg:leading-[2rem] lg:text-[1.2rem] lg:w-3/4 text-sm mt-4 text-zinc-400 lg:font-extralight"
                             >
-                                Request a Demo
-                            </button>
+                                Outperform the NIFTY 50 at scale, and build more reliable investment strategies.
+                            </div>
+                            <div className="mt-8 flex gap-4">
+                                <button
+                                    className="rounded-full py-3 transition hover:bg-lime-700 hover:text-white px-6 text-sm text-gray-800 bg-white"
+                                >
+                                    Request a Demo
+                                </button>
 
-                            <button
-                                className="rounded-full py-3 px-6 transition hover:bg-lime-700 text-sm text-white bg-transparent border border-gray-800 flex items-center"
-                            >
-                                <i className="fa-solid fa-arrow-right text-xs pl-2 pr-3"></i> Go to Docs
-                            </button>
+                                <button
+                                    className="rounded-full py-3 px-6 transition hover:bg-lime-700 text-sm text-white bg-transparent border border-gray-800 flex items-center"
+                                >
+                                    <i className="fa-solid fa-arrow-right text-xs pl-2 pr-3"></i> Go to Docs
+                                </button>
+                            </div>
                         </div>
                     </div>
 
@@ -98,10 +118,10 @@ export default function Main() {
                     </p>
                     <div className="flex flex-row">
                         <div className="flex flex-col work-sans-semibold justify-around h-[8rem] w-[34%] text-[1rem] font-bold mr-2">
-                            <div><i className="fa-solid fa-star pr-2 text-blue-500 text-[.8rem]"></i>Popular stocks:</div>
-                            <div><i className="fa-solid fa-medal pr-2 text-blue-500 text-[.8rem]"></i>Stocks ranking:</div>
-                            <div><i className="fa-solid fa-images pr-2 text-blue-500 text-[.8rem]"></i>ETFs ranking:</div>
-                            <div><i className="fa-solid fa-bullseye pr-2 text-blue-500 text-[.8rem]"></i>Trade Ideas:</div>
+                            <div><i className="fa-solid fa-star pr-2 text text-[.8rem]"></i>Popular stocks:</div>
+                            <div><i className="fa-solid fa-medal pr-2 text text-[.8rem]"></i>Stocks ranking:</div>
+                            <div><i className="fa-solid fa-images pr-2 text text-[.8rem]"></i>ETFs ranking:</div>
+                            <div><i className="fa-solid fa-bullseye pr-2 text text-[.8rem]"></i>Trade Ideas:</div>
                         </div>
                         <div className="work-sans-normal text-[.9rem] py-1 underline">
                             <table>
@@ -132,45 +152,52 @@ export default function Main() {
             {/* /AI Section */}
 
             {/* Carousel */}
-            <div className="relative h-[24rem] w-full bg-white">
-                <Carousel indicators={false}
-                    onSlideChange={(index) => setCurrentSlide(index)}
-                    leftControl={
-                        <div className="absolute left-20 top-1/2 transform -translate-y-1/2 cursor-pointer">
-                            <span className="bg-white border-black text-black px-4 py-3 rounded-full border">
-                                <i className="fa-solid fa-angle-left"></i>
-                            </span>
-                        </div>
-                    }
-                    rightControl={
-                        <div className="absolute right-20 top-1/2 transform -translate-y-1/2 cursor-pointer">
-                            <span className="bg-white border-black text-black px-4 py-3 border rounded-full">
-                                <i className="fa-solid fa-angle-right"></i>
-                            </span>
-                        </div>
-                    }
+            <div className="relative overflow-hidden h-[24rem] w-full bg-white">
+                <div className="flex transition-transform duration-500 ease-in-out"
+                    style={{
+                        transform: `translateX(-${currentSlide * 100}%)`,
+                    }}
                 >
                     {slides.map((slide, index) => (
                         <div
                             key={index}
-                            className="w-dvw h-[24rem] flex flex-col justify-center items-center px-44 text-black bg-white"
+                            className="flex-shrink-0 w-full h-[24rem] flex flex-col justify-center items-center px-44 text-black bg-white"
+                            style={{ flexBasis: "100%" }} // Ensures each slide takes full width
                         >
-                            <h2 className="work-sans-bold text-2xl pb-6 text-[2.4rem] text-sky-600 font-bold">
+                            <h2 className="work-sans-bold text-2xl pb-6 text-[2.4rem] font-bold darkText">
                                 What Our Users Say
                             </h2>
                             <p className="work-sans-normal pb-4 text-center">{slide.description}</p>
                             <h4 className="work-sans-bold font-bold text-gray-600">{slide.owner}</h4>
                         </div>
                     ))}
-                </Carousel>
+                </div>
+
+                {/* Left and Right Controls */}
+                <div
+                    className="absolute left-20 z-30 top-1/2 transform -translate-y-1/2 cursor-pointer"
+                    onClick={handlePrev}
+                >
+                    <span className="bg-white border-black text-black px-4 py-3 rounded-full border">
+                        <i className="fa-solid fa-angle-left"></i>
+                    </span>
+                </div>
+                <div
+                    className="absolute right-20 z-30 top-1/2 transform -translate-y-1/2 cursor-pointer"
+                    onClick={handleNext}
+                >
+                    <span className="bg-white border-black text-black px-4 py-3 rounded-full border rounded-full">
+                        <i className="fa-solid fa-angle-right"></i>
+                    </span>
+                </div>
 
                 {/* Custom Navigation Dots */}
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
                     {slides.map((_, index) => (
                         <button
                             key={index}
-                            onClick={() => setCurrentSlide(index)} // Change slide on click
-                            className={`h-3 w-3 mb-8  rounded-full ${currentSlide === index ? "bg-blue-500" : "bg-gray-300"
+                            onClick={() => setCurrentSlide(index)}
+                            className={`h-3 w-3 rounded-full ${currentSlide === index ? "bg-gray-700" : "bg-gray-300"
                                 }`}
                         ></button>
                     ))}
@@ -182,7 +209,7 @@ export default function Main() {
             <div className="h-[30rem] py-12">
                 <div className="w-1/2 pl-32 pr-4">
                     <h2 className="work-sans-semibold text-[2.2rem] pb-4 font-bold text-white">Data Analyzed to Calculate the AI Score</h2>
-                    <div className="flex flex-row text-sky-600 pb-4">
+                    <div className="flex flex-row text pb-4">
                         <div>
                             <div className="work-sans-bold text-[1.5rem] font-bold">+900</div>
                             <div>Daily indicators per stock.</div>
@@ -197,21 +224,21 @@ export default function Main() {
                         </div>
                     </div>
                     <div className="text-gray-100">+600 technical, 150 fundamental, and 150 sentiment daily indicators per stock, processed into more than +10,000 daily features by our Artificial Intelligence.</div>
-                    <button className="mt-12 py-3 px-7 rounded-lg font-bold bg-sky-600 text-white">How it Works</button>
+                    <button className="mt-12 py-3 px-7 rounded-lg font-bold text text-white">How it Works</button>
                 </div>
             </div>
             {/* Data Analyzed */}
 
             {/* Use Cases */}
             <div className="bg-stone-100 py-12">
-                <h2 className="work-sans-bold text-[2.2rem] text-center text-sky-600">Use Cases</h2>
+                <h2 className="work-sans-bold text-[2.2rem] text-center darkText">Use Cases</h2>
 
                 <div className="flex flex-row pb-2">
 
-                    <div className="w-1/2 pl-28 pt-28 pr-16">
-                        <h4 className="text-sky-600 work-sans-bold text-[1.5rem] pb-4">Pick the Winners. Avoid the Losers</h4>
-                        <div className="leading-6 pb-6 text-gray-800">Since 2017, US-listed stocks with the highest AI Score (10/10) outperformed the market by +14.69% on average after 3 months (annualized alpha), while stocks with the lowest AI Score (1/10) underperformed the market by -37.38% on average (annualized alpha).</div>
-                        <h5 className="text-sky-700">See Today's Top Stock <i className="fa-solid fa-angle-right"></i> </h5>
+                    <div className="w-1/2 pl-28 pt-16 pr-16">
+                        <h4 className="darkText work-sans-bold text-[1.5rem] pb-4">Outperforming NIFTY 50</h4>
+                        <div className="leading-6 pb-6 text-[.9rem] text-gray-800">We leverage AI to revolutionize investing. Our AI-powered strategies aim to consistently beat the Nifty 50 with our expected 25-30% returns by identifying undervalued stocks, mitigating risk through portfolio optimization, and capitalizing on market inefficiencies.  Additionally, we prioritize ethical and sustainable investing practices, ensuring long-term value creation.  By employing advanced algorithms and machine learning techniques, we analyze vast datasets, identify market trends, and make informed investment decisions. This data-driven approach allows us to uncover hidden opportunities and avoid potential pitfalls.</div>
+                        <h5 className="darkText">See Today's Top Stock <i className="fa-solid fa-angle-right"></i> </h5>
                     </div>
 
                     <div className="py-12 px-10">
@@ -220,57 +247,18 @@ export default function Main() {
                 </div>
 
                 <div className="flex flex-row pb-2">
-                    <div className="w-1/2 pl-28 pt-28 pr-16">
-                        <h4 className="text-sky-600 work-sans-bold text-[1.5rem] pb-4">Pick the Winners. Avoid the Losers</h4>
-                        <div className="leading-6 pb-6 text-gray-800">Since 2017, US-listed stocks with the highest AI Score (10/10) outperformed the market by +14.69% on average after 3 months (annualized alpha), while stocks with the lowest AI Score (1/10) underperformed the market by -37.38% on average (annualized alpha).</div>
-                        <h5 className="text-sky-700">See Today's Top Stock <i className="fa-solid fa-angle-right"></i> </h5>
-                    </div>
+                    <div className="w-1/2 pl-28 pt-10 pr-16">
+                        <h4 className="darkText work-sans-bold text-[1.5rem] pb-4">Short-term high frequency trading
+                        </h4>
+                        <div className="leading-6 text-[.9rem] pb-6 text-gray-800">
+                            <p>In the fast-paced world of finance, high-frequency trading (HFT) has revolutionized how markets operate. By leveraging sophisticated algorithms and powerful computing capabilities, HFT firms can execute trades in milliseconds, often capitalizing on minute price fluctuations. Now, with the AI, HFT is entering a new era of efficiency and profitability.
+                            </p>
+                            <p>
+                                Our AI models are expected to yield a 45% return. trained on vast datasets of historical market data, can identify patterns and trends that are imperceptible to human traders. These models can quickly adapt to changing market conditions, enabling HFT firms to make split-second decisions with greater accuracy and speed. By automating various aspects of the trading process, AI can significantly reduce human error and reaction time, leading to higher returns.
 
-                    <div className="py-12 px-10">
-                        <div className="border-black bg-white w-[30rem] rounded-md h-[22rem]"></div>
-                    </div>
-                </div>
-
-                <div className="flex flex-row pb-2">
-                    <div className="w-1/2 pl-28 pt-28 pr-16">
-                        <h4 className="text-sky-600 work-sans-bold text-[1.5rem] pb-4">Pick the Winners. Avoid the Losers</h4>
-                        <div className="leading-6 pb-6 text-gray-800">Since 2017, US-listed stocks with the highest AI Score (10/10) outperformed the market by +14.69% on average after 3 months (annualized alpha), while stocks with the lowest AI Score (1/10) underperformed the market by -37.38% on average (annualized alpha).</div>
-                        <h5 className="text-sky-700">See Today's Top Stock <i className="fa-solid fa-angle-right"></i> </h5>
-                    </div>
-
-                    <div className="py-12 px-10">
-                        <div className="border-black bg-white w-[30rem] rounded-md h-[22rem]"></div>
-                    </div>
-                </div><div className="flex flex-row pb-2">
-                    <div className="w-1/2 pl-28 pt-28 pr-16">
-                        <h4 className="text-sky-600 work-sans-bold text-[1.5rem] pb-4">Pick the Winners. Avoid the Losers</h4>
-                        <div className="leading-6 pb-6 text-gray-800">Since 2017, US-listed stocks with the highest AI Score (10/10) outperformed the market by +14.69% on average after 3 months (annualized alpha), while stocks with the lowest AI Score (1/10) underperformed the market by -37.38% on average (annualized alpha).</div>
-                        <h5 className="text-sky-700">See Today's Top Stock <i className="fa-solid fa-angle-right"></i> </h5>
-                    </div>
-
-                    <div className="py-12 px-10">
-                        <div className="border-black bg-white w-[30rem] rounded-md h-[22rem]"></div>
-                    </div>
-                </div>
-
-
-                <div className="flex flex-row pb-2">
-                    <div className="w-1/2 pl-28 pt-28 pr-16">
-                        <h4 className="text-sky-600 work-sans-bold text-[1.5rem] pb-4">Pick the Winners. Avoid the Losers</h4>
-                        <div className="leading-6 pb-6 text-gray-800">Since 2017, US-listed stocks with the highest AI Score (10/10) outperformed the market by +14.69% on average after 3 months (annualized alpha), while stocks with the lowest AI Score (1/10) underperformed the market by -37.38% on average (annualized alpha).</div>
-                        <h5 className="text-sky-700">See Today's Top Stock <i className="fa-solid fa-angle-right"></i> </h5>
-                    </div>
-
-                    <div className="py-12 px-10">
-                        <div className="border-black bg-white w-[30rem] rounded-md h-[22rem]"></div>
-                    </div>
-                </div>
-
-                <div className="flex flex-row pb-2">
-                    <div className="w-1/2 pl-28 pt-28 pr-16">
-                        <h4 className="text-sky-600 work-sans-bold text-[1.5rem] pb-4">Pick the Winners. Avoid the Losers</h4>
-                        <div className="leading-6 pb-6 text-gray-800">Since 2017, US-listed stocks with the highest AI Score (10/10) outperformed the market by +14.69% on average after 3 months (annualized alpha), while stocks with the lowest AI Score (1/10) underperformed the market by -37.38% on average (annualized alpha).</div>
-                        <h5 className="text-sky-700">See Today's Top Stock <i className="fa-solid fa-angle-right"></i> </h5>
+                            </p>
+                        </div>
+                        <h5 className="darkText">See Today's Top Stock <i className="fa-solid fa-angle-right"></i> </h5>
                     </div>
 
                     <div className="py-12 px-10">
@@ -279,7 +267,7 @@ export default function Main() {
                 </div>
 
                 <div className="flex justify-center">
-                    <button className="bg-sky-600 py-3 text-[1.1rem] px-5 rounded-lg work-sans-regular text-gray-100 ">Join for Free and Create Your First Portfolio</button>
+                    <button className="text py-3 text-[1.1rem] px-5 rounded-lg work-sans-regular text-gray-100 ">Join for Free and Create Your First Portfolio</button>
                 </div>
 
             </div>
@@ -287,7 +275,7 @@ export default function Main() {
 
             {/* About AI */}
             <div className="bg-white py-12">
-                <h2 className="work-sans-bold text-[2.2rem] text-center text-sky-600 px-36 pb-6">
+                <h2 className="work-sans-bold text-[2.2rem] text-center darkText px-36 pb-6">
                     Nobody can predict the future, but our Artificial Intelligence puts the odds in your favor
                 </h2>
                 <div className="text-black text-center px-32">
@@ -298,14 +286,16 @@ export default function Main() {
             {/* About AI */}
 
             <div className="bg-stone-100 py-10">
-                <h2 className="work-sans-bold px-48 text-[2.2rem] text-center text-sky-600">Start Making Smarter Investment Decisions</h2>
+                <h2 className="work-sans-bold px-48 text-[2.2rem] text-center darkText">Start Making Smarter Investment Decisions</h2>
                 <p className="pb-6 pl-56 text-[1rem]">Our AI-powered stock analytics platform will help you pick the best stocks and optimize your portfolios' performance.</p>
                 <div className="flex justify-center">
-                    <button className="bg-sky-600 py-3 text-[1.1rem] px-5 rounded-lg work-sans-normal text-gray-100 ">Start Now</button>
+                    <button className="text py-3 text-[1.1rem] px-5 rounded-lg work-sans-normal text-gray-100 ">Start Now</button>
                 </div>
             </div>
 
-
+            {/* Footer  */}
+            <Footer />
+            {/* Footer  */}
 
         </div>
     );

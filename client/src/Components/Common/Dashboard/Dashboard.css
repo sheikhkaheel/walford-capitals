@@ -25,7 +25,7 @@ h2 {
 /* Dashboard */
 
 .dashboard{
-    background-image: url('../../../../public/bold.jpg');
+    background-image: url('../../../../bold.jpg');
     object-fit: cover;
     background-size: 100% 100%;
 }

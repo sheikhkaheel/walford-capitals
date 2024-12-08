@@ -1,4 +1,3 @@
-import React from "react";
 
 export default function SignIn() {
     return (
@@ -15,12 +14,10 @@ export default function SignIn() {
                 </p>
 
                 <div className="flex flex-col px-12">
-                    <button className="hover:bg-gray-100 border border-gray-300 py-2 rounded-lg">
-                        <i className="fa-brands fa-google pr-2"></i>
-                        <a href="http://localhost:3000/auth/google/callback">
+                    <a href="/api/auth/google/callback" className="hover:bg-gray-100 border text-center border-gray-300 py-2 rounded-lg inline-bolk">
+                            <i className="fa-brands fa-google pr-2"></i>
                             Continue with Google
-                        </a>
-                    </button>
+                    </a>
 
                     <button className="border hover:bg-gray-100 border-gray-300 my-3 py-2 rounded-lg">
                         <i className="fa-brands fa-apple pr-3 text-lg"></i>

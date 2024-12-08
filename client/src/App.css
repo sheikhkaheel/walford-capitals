@@ -1,23 +1,54 @@
 .bg {
-    height: 100%;
-    margin: 0;
-    scrollbar-width: none;
-    background-color: #161616 !important;
-    /* background: rgb(90, 10, 97) !important;
+  height: 100%;
+  margin: 0;
+  scrollbar-width: none;
+  background-color: #161616 !important;
+  /* background: rgb(90, 10, 97) !important;
     background: linear-gradient(90deg, rgba(90, 10, 97, 1) 20%, rgba(32, 26, 119, 1) 79%) !important; */
 }
 
 .wrapper {
-    position: relative;
-    z-index: 1;
+  position: relative;
+  z-index: 1;
 }
 
 .particle-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
+
+
+/* @media (min-width:900px) { */
+  /* Scrollbar Styling  */
+
+  /* General styling for the scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 1vh;
+  }
+
+  /* Background of the scrollbar */
+  ::-webkit-scrollbar-track {
+    background: #2e2e2e;
+    /* Dark gray background */
+  }
+
+  /* Thumb styling */
+  ::-webkit-scrollbar-thumb {
+    background: #555;
+    /* Slightly lighter gray for the thumb */
+    border-radius: 10px;
+    /* Rounded corners for the thumb */
+  }
+
+  /* Optional: Styling for hover effect on the scrollbar */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #777;
+    /* Lighter gray on hover */
+  }
+/* } */

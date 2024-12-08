@@ -1,8 +1,8 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, LineElement, PointElement, LinearScale, Title, Tooltip, Legend } from 'chart.js';
 import Nav from "../../Boilerplate/Nav/Nav";
+import 'animate.css';
 import './Dashboard.css';
 
 ChartJS.register(LineElement, PointElement, LinearScale, Title, Tooltip, Legend);
@@ -88,8 +88,8 @@ export default function Dashboard() {
                     </div>
 
                     {/* Another Section Card */}
-                    <div className="w-full lg:w-1/3 lg:mx-2 mb-4 lg:mb-0 animation">
-                        <div className="h-full transition-all bg-slate-700 bg-opacity-30 backdrop-blur-lg p-6 shadow-lg text-white rounded-2xl flex flex-col justify-between group hover:scale-105">
+                    <div className="w-full lg:w-1/3 lg:mx-2 mb-4 lg:mb-0 backdrop-blur-lg animate__animated rounded-2xl animate__fadeInRight overflow-hidden">
+                        <div className="h-full transition-all bg-slate-700 bg-opacity-30  p-6 shadow-lg text-white  flex flex-col justify-between group hover:scale-105">
                             <h2 className="text-lg font-semibold text-center">Another Section</h2>
                             <div className="flex flex-col items-center mb-2">
                                 <p className="text-sm">Additional information can go here.</p>

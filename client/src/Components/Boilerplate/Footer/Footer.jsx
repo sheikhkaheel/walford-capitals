@@ -1,7 +1,7 @@
 export default function Footer() {
     return (
         <footer className="text-white bg-stone-100">
-            <div className="rounded-t-[3rem] py-16 px-12 h-[30rem]" style={{ backgroundColor: '#333333' }}>
+            <div className="rounded-t-[3rem] flex py-16 px-12 h-[30rem]" style={{ backgroundColor: '#333333' }}>
                 <div className="w-1/2">
                     <div className="pb-8 flex justify-between w-[20rem]">
                         <img className="w-20 h-10 mt-1.5" src=".../../../Logo.png" alt="" />
@@ -14,7 +14,7 @@ export default function Footer() {
                     </div>
 
                     <div className="text-gray-400 text-[.9rem] leading-[1.4rem] w-[28rem] pb-10">
-                        Danelfin is a stock analytics platform powered by AI. It helps investors to pick the best stocks, optimize their portfolios, and make smart data-driven investment decisions.
+                        Walford Capitals is a stock analytics platform powered by AI. It helps investors to pick the best stocks, optimize their portfolios, and make smart data-driven investment decisions.
                     </div>
 
                     <div className="flex gap-4 text-gray-400">
@@ -35,16 +35,23 @@ export default function Footer() {
                                 <div className="font-bold">NYC</div>
                             </div>
                             <div className="text-[.82rem] leading-6">
-                            <span className="font-bold">Walford Capitals, S.L. </span>
+                                <span className="font-bold">Walford Capitals, S.L. </span>
                                 655 3rd Avenue Suite 1830
                                 New York, USA
                             </div>
                         </div>
                     </div>
+
+
                 </div>
 
                 <div className="w-1/2">
-
+                    <div className="lg:h-28 lg:pl-20 flex gap-2 text-gray-400">
+                        <input type="checkbox" className="rounded-sm mt-1 bg-gray-300" />
+                        <p className="work-sans-normal text-sm">
+                            If you would like us to no longer continue to stop not sending you special deals and offers every week, please indicate  you are inclined to yes by not checking the box
+                        </p>
+                    </div>
                 </div>
             </div>
         </footer>

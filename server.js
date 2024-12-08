@@ -46,9 +46,9 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+app.get('/api/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
-app.get('/auth/google/callback',
+app.get('/api/auth/google/callback',
     passport.authenticate('google', { failureRedirect: 'http://localhost:5173/login' }), // Correctly authenticate and redirect on failure
     (req, res) => {
         // After successful authentication, redirect to React app (dashboard or home)

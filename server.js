@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const session = require('express-session');
 const path = require('path');
 const cors = require('cors');
+const MongoStore = require('connect-mongo');
 
 const app = express();
 
@@ -24,7 +25,11 @@ app.use('/assets', express.static(path.join(__dirname, 'dist/assets')));
 app.use(session({
     secret: 'my_name_is_bobo',
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: MongoStore.create({
+        mongoUrl: process.env.MONGODB_URI, // Use your MongoDB connection string
+        collectionName: 'sessions' // Optional: specify collection name
+    })
 }));
 
 // Initialize Passport
@@ -52,7 +57,7 @@ app.get('/api/auth/google/callback',
     passport.authenticate('google', { failureRedirect: 'http://localhost:5173/login' }), // Correctly authenticate and redirect on failure
     (req, res) => {
         // After successful authentication, redirect to React app (dashboard or home)
-        res.redirect('http://localhost:5173/main');
+        res.redirect('https://api/main');
     }
 );
 

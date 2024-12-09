@@ -1,4 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Brain, PieChart, ShieldCheck, Users } from 'lucide-react'
 import './Main.css';
 import ThreeDComponent from '../../Common/ThreeDComponent/ThreeDComponent';
 import Nav from "../Nav/Nav";
@@ -240,7 +241,9 @@ export default function Main() {
                     </div>
 
                     <div className="lg:py-12 p-4 lg:px-10">
-                        <div className="border-black bg-white lg:w-[30rem] rounded-md h-[22rem]"></div>
+                        <div className="border-black bg-white p-4 lg:w-[30rem] rounded-md h-[22rem]">
+                            <img className="h-full" src="../../../../services-graph.jpg" alt="" />
+                        </div>
                     </div>
                 </div>
 
@@ -259,7 +262,9 @@ export default function Main() {
                     </div>
 
                     <div className="lg:py-12 p-4 lg:px-10">
-                        <div className="border-black bg-white lg:w-[30rem] rounded-md h-[22rem]"></div>
+                    <div className="border-black bg-white p-4 lg:w-[30rem] rounded-md h-[22rem]">
+                            <img className="h-full" src="../../../../high-frequency.jpg" alt="" />
+                        </div>
                     </div>
                 </div>
 
@@ -267,8 +272,65 @@ export default function Main() {
                     <button className="text pt-3 text-[1.1rem] px-5 rounded-lg work-sans-regular text-gray-100 ">Join for Free and Create Your First Portfolio</button>
                 </div>
 
+
             </div>
             {/* Use Cases */}
+
+            {/* Services */}
+
+            <div >
+                <div className=" flex work-sans-bold text-white">
+                    <div className="px-32 py-12">
+                        <h2 className="text-[2.2rem] pb-10">Services</h2>
+
+                        <div className="flex items-start space-x-4 py-2 pl-6">
+                            <Brain className="h-6 w-6 mt-1 text-primary" />
+                            <div className="space-y-2">
+                                <h3 className="text-[1.3rem] font-bold">AI-Powered Investments</h3>
+                                <p className="text-sm text-muted-foreground">
+                                    Explain how AI identifies high-return opportunities.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="flex items-start space-x-4 py-2 pl-6">
+                            <PieChart className="h-6 w-6 mt-1 text-primary" />
+                            <div className="space-y-2">
+                                <h3 className="text-[1.3rem] font-bold">Portfolio Diversification</h3>
+                                <p className="text-sm text-muted-foreground">
+                                    Stocks, bonds, real estate, and alternative investments.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="flex items-start space-x-4 py-2 pl-6">
+                            <ShieldCheck className="h-6 w-6 mt-1 text-primary" />
+                            <div className="space-y-2">
+                                <h3 className="text-[1.3rem] font-bold">Risk Management</h3>
+                                <p className="text-sm text-muted-foreground">
+                                    Your innovative approach to balancing risks and returns.
+                                </p>
+                            </div>
+                        </div>
+                        <div className="flex items-start space-x-4 py-2 pl-6">
+                            <Users className="h-6 w-6 mt-1 text-primary" />
+                            <div className="space-y-2">
+                                <h3 className="text-[1.3rem] font-bold">Customized Solutions</h3>
+                                <p className="text-sm text-muted-foreground">
+                                    Services tailored to retail and institutional investors.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    {/* <div className="lg:py-12 w-1/2 p-4 lg:px-10">
+                        <div className="border-black bg-white p-4 lg:w-[30rem] rounded-md h-[22rem]">
+                            <img className="h-full" src="../../../../services-graph.jpg" alt="" />
+                        </div>
+                    </div> */}
+                </div>
+            </div>
+
+            {/* Services */}
 
             {/* About AI */}
             <div className="bg-white py-12">

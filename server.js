@@ -55,8 +55,8 @@ app.get('/auth/google/callback',
     (req, res) => {
         // After successful authentication, redirect to React app (dashboard or home)
         console.log(req.user)
-        // res.redirect('http://localhost:3000/main');
-        res.redirect('https://walford-capitals.onrender.com/main');
+        res.redirect('http://localhost:3000/main');
+        // res.redirect('https://walford-capitals.onrender.com/main');
     }
 );
 

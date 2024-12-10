@@ -40,6 +40,7 @@ app.use(cors({
     origin: 'http://localhost:5173',
     credentials: true
 }));
+// app.use(cors());
 app.use(express.urlencoded({ limit: '10mb', extended: true }));
 app.use(express.json());
 
@@ -47,20 +48,20 @@ app.use(express.json());
 
 // Routes will be added here
 
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
-});
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
-app.get('/api/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
-
-app.get('/api/auth/google/callback',
+app.get('/auth/google/callback',
     passport.authenticate('google', { failureRedirect: 'http://localhost:5173/login' }), // Correctly authenticate and redirect on failure
     (req, res) => {
         // After successful authentication, redirect to React app (dashboard or home)
-        res.redirect('https://api/main');
+        console.log(req.user)
+        res.redirect('http://localhost:3000/main');
     }
 );
 
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
 
 app.get('/logout', (req, res) => {
     req.logout();

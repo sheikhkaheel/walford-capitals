@@ -139,8 +139,8 @@ const StockDataGraph = () => {
     };
 
     if (loading) return (
-        <div className='flex justify-center items-center h-screen'>
-            <span className='colorText' >WalFord Capiltals</span>            
+        <div className='flex bg-black justify-center items-center h-screen'>
+            <span className='colorText'> <ClipLoader color="#ffffff" loading={loading} size={50} /> WalFord Capiltals</span>            
         </div>
     );
     if (error) return <div className="text-red-500 text-center">{error}</div>;

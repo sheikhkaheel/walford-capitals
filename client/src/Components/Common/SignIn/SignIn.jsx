@@ -14,9 +14,10 @@ export default function SignIn() {
                 </p>
 
                 <div className="flex flex-col px-12">
-                    <a href="http://localhost:3000/auth/google/callback" className="hover:bg-gray-100 border text-center border-gray-300 py-2 rounded-lg inline-bolk">
-                            <i className="fa-brands fa-google pr-2"></i>
-                            Continue with Google
+                    {/* <a href="http://localhost:3000/auth/google/callback" className="hover:bg-gray-100 border text-center border-gray-300 py-2 rounded-lg inline-bolk"> */}
+                    <a href="https://walford-capitals.onrender.com/auth/google/callback" className="hover:bg-gray-100 border text-center border-gray-300 py-2 rounded-lg inline-bolk">
+                        <i className="fa-brands fa-google pr-2"></i>
+                        Continue with Google
                     </a>
 
                     <button className="border hover:bg-gray-100 border-gray-300 my-3 py-2 rounded-lg">

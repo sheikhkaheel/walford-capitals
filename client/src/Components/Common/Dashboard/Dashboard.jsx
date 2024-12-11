@@ -65,7 +65,7 @@ export default function Dashboard() {
             <div className="h-[85.9vh] flex items-center justify-center">
                 <div className="flex flex-col lg:flex-row z-10 w-full justify-around px-4 lg:px-8 py-8 space-y-4 lg:space-y-0 lg:space-x-4">
                     {/* Graph Card */}
-                    <div className="w-full lg:w-1/3 lg:mx-2 mb-4 lg:mb-0 bg-slate-700 bg-opacity-30 rounded-2xl backdrop-blur-lg p-6 shadow-lg slideright">
+                    <div className="w-full lg:w-1/3 lg:mx-2 mb-4 lg:mb-0 bg-slate-700 bg-opacity-30 rounded-2xl backdrop-blur-lg p-6 shadow-lg animate__animated animate__fadeInLeft">
                         <div className="h-full transition-all text-white flex flex-col justify-between group hover:scale-105">
                             <h2 className="text-lg mb-4 font-semibold text-center">{stockData.companyName} ({stockData.ticker})</h2>
                             <div className="flex flex-col items-center mb-2">
@@ -88,7 +88,7 @@ export default function Dashboard() {
                     </div>
 
                     {/* Another Section Card */}
-                    <div className="w-full lg:w-1/3 lg:mx-2 mb-4 lg:mb-0 backdrop-blur-lg animate__animated rounded-2xl animate__fadeInRight overflow-hidden">
+                    <div className="w-full lg:w-1/3 lg:mx-2 mb-4 lg:mb-0 backdrop-blur-lg rounded-2xl animate__animated animate__fadeInRight overflow-hidden">
                         <div className="h-full transition-all bg-slate-700 bg-opacity-30  p-6 shadow-lg text-white  flex flex-col justify-between group hover:scale-105">
                             <h2 className="text-lg font-semibold text-center">Another Section</h2>
                             <div className="flex flex-col items-center mb-2">

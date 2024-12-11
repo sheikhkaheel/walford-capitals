@@ -51,11 +51,12 @@ app.use(express.json());
 app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
 
 app.get('/auth/google/callback',
-    passport.authenticate('google', { failureRedirect: 'http://localhost:5173/login' }), // Correctly authenticate and redirect on failure
+    // passport.authenticate('google', { failureRedirect: 'http://localhost:5173/login' }),
+    passport.authenticate('google', { failureRedirect: 'https://walford-capitals.onrender.com/login' }),
     (req, res) => {
-        // After successful authentication, redirect to React app (dashboard or home)
         console.log(req.user)
         // res.redirect('http://localhost:3000/main');
+        // res.redirect('http://localhost:5173/main');
         res.redirect('https://walford-capitals.onrender.com/main');
     }
 );

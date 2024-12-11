@@ -11,7 +11,7 @@ const StockDataGraph = () => {
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(true);
     const chartRef = useRef(null);
-    const [chartType, setChartType] = useState('bar');
+    const [chartType, setChartType] = useState('line');
     const [symbol, setSymbol] = useState('AAPL');
     const [timeframe, setTimeframe] = useState('1day'); // Default to daily
     const [currentMonth, setCurrentMonth] = useState(dayjs().month(9).startOf('month')); // Set to October
@@ -129,10 +129,8 @@ const StockDataGraph = () => {
     const handleMonthChange = (direction) => {
         let newDate;
         if (timeframe === '1year') {
-            // For '1year' timeframe, move to the previous or next year
             newDate = direction === 'prev' ? currentMonth.subtract(1, 'year') : currentMonth.add(1, 'year');
         } else {
-            // For other timeframes, move by months (prev/next month)
             newDate = direction === 'prev' ? currentMonth.subtract(1, 'month') : currentMonth.add(1, 'month');
         }
         setCurrentMonth(newDate.startOf('month'));
@@ -163,8 +161,8 @@ const StockDataGraph = () => {
                 <div className='flex space-x-2 mb-4'>
                     <button onClick={() => handleTimeframeChange('1hour')} className='bg-gray-800 text-white rounded p-2'>Hourly</button>
                     <button onClick={() => handleTimeframeChange('1day')} className='bg-gray-800 text-white rounded p-2'>Daily</button>
-                    <button onClick={() => handleTimeframeChange('1month')} className='bg-gray-800 text-white rounded p-2'>Monthly</button>
-                    <button onClick={() => handleTimeframeChange('1year')} className='bg-gray-800 text-white rounded p-2'>Yearly</button>
+                    {/* <button onClick={() => handleTimeframeChange('1month')} className='bg-gray-800 text-white rounded p-2'>Monthly</button> */}
+                    {/* <button onClick={() => handleTimeframeChange('1year')} className='bg-gray-800 text-white rounded p-2'>Yearly</button> */}
                 </div>
                 <div className="flex space-x-2 mb-4">
                     <button onClick={() => handleMonthChange('prev')} className='bg-gray-800 text-white rounded p-2'>Previous</button>

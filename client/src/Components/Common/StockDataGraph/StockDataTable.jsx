@@ -106,8 +106,8 @@ const StockDataTable = () => {
                 <div className='flex space-x-2 mb-4'>
                     <button onClick={() => handleTimeframeChange('1hour')} className='bg-gray-800 text-white rounded p-2'>Hourly</button>
                     <button onClick={() => handleTimeframeChange('1day')} className='bg-gray-800 text-white rounded p-2'>Daily</button>
-                    <button onClick={() => handleTimeframeChange('1month')} className='bg-gray-800 text-white rounded p-2'>Monthly</button>
-                    <button onClick={() => handleTimeframeChange('1year')} className='bg-gray-800 text-white rounded p-2'>Yearly</button>
+                    {/* <button onClick={() => handleTimeframeChange('1month')} className='bg-gray-800 text-white rounded p-2'>Monthly</button> */}
+                    {/* <button onClick={() => handleTimeframeChange('1year')} className='bg-gray-800 text-white rounded p-2'>Yearly</button> */}
                 </div>
                 <div className="flex space-x-2 mb-4">
                     <button onClick={() => handleMonthChange('prev')} className='bg-gray-800 text-white rounded p-2'>Previous</button>

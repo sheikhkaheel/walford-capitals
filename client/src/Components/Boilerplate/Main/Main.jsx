@@ -61,10 +61,10 @@ export default function Main() {
             {/* Landing Page */}
             <div className="bg min-h-screen rounded-b-2xl lg:rounded-b-[3rem] overflow-hidden">
                 <Nav />
-                <main className="flex flex-col relative overflow-hidden lg:justify-around md:flex-row lg:flex-row">
-                    <div className={`lg:relative z-20 animate__animated animate__fadeInLeft md:h-full lg:h-screen text-white h-1/2 pt-40 px-4 md:w-2/3 lg:pt-16 lg:w-[80%]}`}>
+                <main className="flex flex-col md:flex-col relative overflow-hidden lg:justify-around lg:flex-row">
+                    <div className={`lg:relative z-20 animate__animated animate__fadeInLeft md:h-full lg:h-screen text-white h-1/2 pt-40 px-4 md:w-3/4 lg:pt-16 lg:w-[80%]}`}>
                         <div className="lg:absolute lg:bottom-[18%]">
-                            <h2 className="work-sans-regular lg:text-[3.5rem] lg:pt-12 leading-[4.1rem] text-4xl h-60 font-bold">
+                            <h2 className="work-sans-regular md:text-[3.6rem] lg:text-[3.5rem] lg:pt-12 leading-[4.1rem] text-4xl h-60 font-bold">
                                 Where Vision Meets Precision: Redefining Wealth with Technology
                             </h2>
                             <div
@@ -210,20 +210,20 @@ export default function Main() {
                     <h2 className="work-sans-semibold text-[2.2rem] pb-4 font-bold text-white">Data Analyzed to Calculate the AI Score</h2>
                     <div className="flex flex-row text pb-8 lg:pb-4">
                         <div>
-                            <div className="work-sans-bold text-[1.5rem] font-bold">+900</div>
+                            <div className="work-sans-bold lg:text-[1.5rem] text-[1.2rem] font-bold">+900</div>
                             <div>Daily indicators per stock.</div>
                         </div>
-                        <div className="border-r items border-t-0 border-b-0 border-l pl-4 border">
-                            <div className="work-sans-bold text-[1.5rem] font-bold">+10,000</div>
+                        <div className="border-r items border-t-0 border-b-0 border-l lg:pl-4 pl-2 border">
+                            <div className="work-sans-bold lg:text-[1.5rem] text-[1.2rem] font-bold">+10,000</div>
                             <div>Daily features per stock.</div>
                         </div>
-                        <div className="pl-4">
-                            <div className="work-sans-bold text-[1.5rem] font-bold">+5 Billion</div>
+                        <div className="lg:pl-4 pl-2">
+                            <div className="work-sans-bold lg:text-[1.5rem] text-[1.2rem] font-bold">+5 Billion</div>
                             <div>Features used to learn.</div>
                         </div>
                     </div>
                     <div className="text-gray-100">+600 technical, 150 fundamental, and 150 sentiment daily indicators per stock, processed into more than +10,000 daily features by our Artificial Intelligence.</div>
-                    <button className="mt-12 py-3 lg:px-7 rounded-lg font-bold bg-gray-500 text-white">How it Works</button>
+                    <button className="mt-12 py-3 lg:px-7 px-4 rounded-lg font-bold bg-gray-500 text-white">How it Works</button>
                 </div>
             </div>
             {/* Data Analyzed */}
@@ -235,13 +235,13 @@ export default function Main() {
                 <div className="flex flex-col lg:flex-row pb-2">
 
                     <div className="lg:w-1/2 px-4 lg:pl-28 pt-8 lg:pt-16 pr-16">
-                        <h4 className="darkText work-sans-bold text-[1.5rem] pb-4">Outperforming NIFTY 50</h4>
+                        <h4 className="darkText work-sans-bold lg:text-[1.5rem] text-[1.2rem] pb-4">Outperforming NIFTY 50</h4>
                         <div className="leading-6 pb-6 text-[.9rem] text-gray-800">We leverage AI to revolutionize investing. Our AI-powered strategies aim to consistently beat the Nifty 50 with our expected 25-30% returns by identifying undervalued stocks, mitigating risk through portfolio optimization, and capitalizing on market inefficiencies.  Additionally, we prioritize ethical and sustainable investing practices, ensuring long-term value creation.  By employing advanced algorithms and machine learning techniques, we analyze vast datasets, identify market trends, and make informed investment decisions. This data-driven approach allows us to uncover hidden opportunities and avoid potential pitfalls.</div>
                         <h5 className="darkText">See Today's Top Stock <i className="fa-solid fa-angle-right"></i> </h5>
                     </div>
 
                     <div className="lg:py-12 p-4 lg:px-10">
-                        <div className="border-black bg-white p-4 lg:w-[30rem] rounded-md h-[22rem]">
+                        <div className="border-black bg-white p-4 flex justify-center lg:w-[30rem] rounded-md h-[22rem]">
                             <img className="h-full" src="../../../../services-graph.jpg" alt="" />
                         </div>
                     </div>
@@ -249,7 +249,7 @@ export default function Main() {
 
                 <div className="flex flex-col lg:flex-row lg:pb-2">
                     <div className="lg:w-1/2 px-4 lg:pl-28 pt-10 pr-16">
-                        <h4 className="darkText work-sans-bold text-[1.5rem] pb-4">Short-term high frequency trading
+                        <h4 className="darkText work-sans-bold lg:text-[1.5rem] text-[1.2rem] pb-4">Short-term high frequency trading
                         </h4>
                         <div className="leading-6 text-[.9rem] pb-6 text-gray-800">
                             <p>In the fast-paced world of finance, high-frequency trading (HFT) has revolutionized how markets operate. By leveraging sophisticated algorithms and powerful computing capabilities, HFT firms can execute trades in milliseconds, often capitalizing on minute price fluctuations. Now, with the AI, HFT is entering a new era of efficiency and profitability.
@@ -262,7 +262,7 @@ export default function Main() {
                     </div>
 
                     <div className="lg:py-12 p-4 lg:px-10">
-                    <div className="border-black bg-white p-4 lg:w-[30rem] rounded-md h-[22rem]">
+                    <div className="border-black bg-white p-4 flex justify-center lg:w-[30rem] rounded-md h-[22rem]">
                             <img className="h-full" src="../../../../high-frequency.jpg" alt="" />
                         </div>
                     </div>
@@ -280,10 +280,10 @@ export default function Main() {
 
             <div >
                 <div className=" flex work-sans-bold text-white">
-                    <div className="px-32 py-12">
+                    <div className="lg:px-32 px-4 py-12">
                         <h2 className="text-[2.2rem] pb-10">Services</h2>
 
-                        <div className="flex items-start space-x-4 py-2 pl-6">
+                        <div className="flex items-start space-x-4 py-2 lg:pl-6">
                             <Brain className="h-6 w-6 mt-1 text-primary" />
                             <div className="space-y-2">
                                 <h3 className="text-[1.3rem] font-bold">AI-Powered Investments</h3>
@@ -292,7 +292,7 @@ export default function Main() {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-start space-x-4 py-2 pl-6">
+                        <div className="flex items-start space-x-4 py-2 lg:pl-6">
                             <PieChart className="h-6 w-6 mt-1 text-primary" />
                             <div className="space-y-2">
                                 <h3 className="text-[1.3rem] font-bold">Portfolio Diversification</h3>
@@ -301,7 +301,7 @@ export default function Main() {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-start space-x-4 py-2 pl-6">
+                        <div className="flex items-start space-x-4 py-2 lg:pl-6">
                             <ShieldCheck className="h-6 w-6 mt-1 text-primary" />
                             <div className="space-y-2">
                                 <h3 className="text-[1.3rem] font-bold">Risk Management</h3>
@@ -310,7 +310,7 @@ export default function Main() {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex items-start space-x-4 py-2 pl-6">
+                        <div className="flex items-start space-x-4 py-2 lg:pl-6">
                             <Users className="h-6 w-6 mt-1 text-primary" />
                             <div className="space-y-2">
                                 <h3 className="text-[1.3rem] font-bold">Customized Solutions</h3>
@@ -323,7 +323,7 @@ export default function Main() {
                     </div>
 
                     {/* <div className="lg:py-12 w-1/2 p-4 lg:px-10">
-                        <div className="border-black bg-white p-4 lg:w-[30rem] rounded-md h-[22rem]">
+                        <div className="border-black bg-white p-4 flex justify-center lg:w-[30rem] rounded-md h-[22rem]">
                             <img className="h-full" src="../../../../services-graph.jpg" alt="" />
                         </div>
                     </div> */}

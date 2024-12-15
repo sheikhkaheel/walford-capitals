@@ -29,7 +29,7 @@ export default function Nav() {
                 </div>
 
                 <Link to='/'>
-                    <button className="w-28 work-sans-normal rounded-full text-md py-3 transition bg-white text-black hover:bg-lime-700 hover:text-white" >
+                    <button className="w-28 work-sans-normal md:block lg:visible invisible rounded-full text-md py-3 transition bg-white text-black hover:bg-lime-700 hover:text-white" >
                         Sign Up
                     </button>
                 </Link>
